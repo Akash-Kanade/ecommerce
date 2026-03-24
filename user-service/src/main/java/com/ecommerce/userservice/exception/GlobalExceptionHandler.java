@@ -15,6 +15,13 @@ public class GlobalExceptionHandler {
                 .body(e.getMessage());
     }
 
+    @ExceptionHandler(WrongCredentialException.class)
+    ResponseEntity<String> LoginExceptionHandler(WrongCredentialException e)
+    {
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                .body(e.getMessage());
+    }
+
     @ExceptionHandler(Exception.class)
     ResponseEntity<String> ExceptionHandler(Exception e)
     {

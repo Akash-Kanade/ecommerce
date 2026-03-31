@@ -8,6 +8,7 @@ import com.ecommerce.userservice.exception.UserAlreadyExistException;
 import com.ecommerce.userservice.exception.WrongCredentialException;
 import com.ecommerce.userservice.mapper.UserMapper;
 import com.ecommerce.userservice.repository.UserRepository;
+import com.ecommerce.userservice.utility.JwtUtility;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -18,13 +19,14 @@ public class UserServiceImpl implements UserService {
     private final UserRepository repository;
     private final UserMapper userMapper;
     private final PasswordEncoder passwordEncoder;
+    private final JwtUtility jwtUtility;
 
-    UserServiceImpl(UserRepository repo, UserMapper userMapper, PasswordEncoder encoder)
+    UserServiceImpl(UserRepository repo, UserMapper userMapper, PasswordEncoder encoder, JwtUtility jwtUtility)
     {
         this.repository = repo;
         this.userMapper = userMapper;
         this.passwordEncoder = encoder;
-
+        this.jwtUtility = jwtUtility;
     }
 
     @Override
@@ -45,15 +47,4 @@ public class UserServiceImpl implements UserService {
 
         return userMapper.toResponse(savedUser);
     }
-
-    public String loginUser(LoginDTO dto) throws WrongCredentialException {
-
-        User user = repository.findUserByEmail(dto.getEmail()).orElseThrow(() ->new WrongCredentialException("email or password is incorrect !"));
-
-        if(!passwordEncoder.matches(dto.getPassword(),user.getPassword()))
-            throw new WrongCredentialException("email or password is incorrect !");
-
-        return "Login successful !";
-    }
-
 }

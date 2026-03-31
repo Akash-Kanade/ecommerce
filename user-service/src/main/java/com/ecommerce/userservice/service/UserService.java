@@ -8,5 +8,4 @@ import com.ecommerce.userservice.exception.WrongCredentialException;
 
 public interface UserService {
     UserResponseDTO registerUser(RegisterUserDTO registerUserDTO) throws UserAlreadyExistException;
-    String loginUser(LoginDTO dto) throws WrongCredentialException;
 }

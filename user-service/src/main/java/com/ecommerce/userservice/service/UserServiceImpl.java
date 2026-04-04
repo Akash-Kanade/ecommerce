@@ -19,14 +19,12 @@ public class UserServiceImpl implements UserService {
     private final UserRepository repository;
     private final UserMapper userMapper;
     private final PasswordEncoder passwordEncoder;
-    private final JwtUtility jwtUtility;
 
-    UserServiceImpl(UserRepository repo, UserMapper userMapper, PasswordEncoder encoder, JwtUtility jwtUtility)
+    UserServiceImpl(UserRepository repo, UserMapper userMapper, PasswordEncoder encoder)
     {
         this.repository = repo;
         this.userMapper = userMapper;
         this.passwordEncoder = encoder;
-        this.jwtUtility = jwtUtility;
     }
 
     @Override

@@ -3,7 +3,6 @@ package com.ecommerce.userservice.mapper;
 import com.ecommerce.userservice.dto.RegisterUserDTO;
 import com.ecommerce.userservice.dto.UserResponseDTO;
 import com.ecommerce.userservice.entity.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component

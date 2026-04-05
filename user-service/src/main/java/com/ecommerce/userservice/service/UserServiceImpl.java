@@ -1,14 +1,11 @@
 package com.ecommerce.userservice.service;
 
-import com.ecommerce.userservice.dto.LoginDTO;
 import com.ecommerce.userservice.dto.RegisterUserDTO;
 import com.ecommerce.userservice.dto.UserResponseDTO;
 import com.ecommerce.userservice.entity.User;
 import com.ecommerce.userservice.exception.UserAlreadyExistException;
-import com.ecommerce.userservice.exception.WrongCredentialException;
 import com.ecommerce.userservice.mapper.UserMapper;
 import com.ecommerce.userservice.repository.UserRepository;
-import com.ecommerce.userservice.utility.JwtUtility;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -20,8 +17,7 @@ public class UserServiceImpl implements UserService {
     private final UserMapper userMapper;
     private final PasswordEncoder passwordEncoder;
 
-    UserServiceImpl(UserRepository repo, UserMapper userMapper, PasswordEncoder encoder)
-    {
+    UserServiceImpl(UserRepository repo, UserMapper userMapper, PasswordEncoder encoder) {
         this.repository = repo;
         this.userMapper = userMapper;
         this.passwordEncoder = encoder;
@@ -29,7 +25,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserResponseDTO registerUser(RegisterUserDTO registerUserDTO) throws UserAlreadyExistException {
-        if(repository.existsUserByEmail(registerUserDTO.getEmail()))
+        if (repository.existsUserByEmail(registerUserDTO.getEmail()))
             throw new UserAlreadyExistException("User with email: " + registerUserDTO.getEmail() + " already exist");
 
         User user = userMapper.toEntity(registerUserDTO);

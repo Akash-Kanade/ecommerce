@@ -25,7 +25,7 @@ public class RegisterController {
     private final UserService userService;
     private final AuthService authService;
 
-    RegisterController(UserService service, AuthService authService, AuthenticationManager authenticationManager, JwtUtility jwtUtility)
+    RegisterController(UserService service, AuthService authService)
     {
         this.userService = service;
         this.authService = authService;

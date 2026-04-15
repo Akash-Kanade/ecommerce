@@ -2,6 +2,7 @@ package com.ecommerce.userservice.service;
 
 import com.ecommerce.userservice.dto.LoginDTO;
 import com.ecommerce.userservice.utility.JwtUtility;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -19,6 +20,7 @@ public class AuthService {
         this.authenticationManager = authenticationManager;
     }
 
+    @Cacheable(cacheNames = "user")
     public String login(LoginDTO dto)
     {
         Authentication authentication = authenticationManager.authenticate(

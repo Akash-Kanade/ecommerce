@@ -52,6 +52,7 @@ public class ProductServiceImpl implements ProductService{
       product.setPrice(dto.getPrice());
       product.setName(dto.getName());
       product.setSku(dto.getSku());
+      product.setImageUrl(dto.getImageUrl());
 
        log.info("Product with sku:{} is updated with id:{}",product.getSku(), product.getProductId());
        return mapper.toResponse(product);
@@ -68,6 +69,14 @@ public class ProductServiceImpl implements ProductService{
         var savedProduct = repository.save(product);
         log.info("Product added successfully with id: {}", savedProduct.getProductId());
         return mapper.toResponse(savedProduct);
+    }
+
+    @Override
+    public List<ProductResponseDTO> searchProduct(String name)
+    {
+        return getAllProducts().stream()
+                .filter(p -> p.getName().toLowerCase().contains(name.toLowerCase()))
+                .toList();
     }
 
     @Override

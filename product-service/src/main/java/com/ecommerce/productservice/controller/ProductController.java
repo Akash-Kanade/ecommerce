@@ -3,12 +3,14 @@ package com.ecommerce.productservice.controller;
 import com.ecommerce.productservice.dto.ProductRequestDTO;
 import com.ecommerce.productservice.dto.ProductResponseDTO;
 import com.ecommerce.productservice.service.ProductService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@Slf4j
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("product")
 public class ProductController {
@@ -26,6 +28,15 @@ public class ProductController {
         var response = productService.getAllProducts();
         return ResponseEntity.status(HttpStatus.OK)
                 .body(response);
+    }
+
+
+    @GetMapping("/search")
+    public ResponseEntity<List<ProductResponseDTO>> findByProductCategory(@RequestParam String name)
+    {
+        log.info("Request Parameter: {}",name);
+        var response = productService.searchProduct(name);
+        return ResponseEntity.ok(response);
     }
 
     @GetMapping("/get/{id}")

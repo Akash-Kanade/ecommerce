@@ -37,6 +37,9 @@ public class Product {
     @Column(name = "sku", nullable = false, unique = true)
     private String sku;
 
+    @Column(name = "image_url")
+    private String imageUrl;
+
     @Column(name = "active", nullable = false)
     private Boolean active = true;
 

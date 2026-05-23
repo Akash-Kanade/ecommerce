@@ -1,14 +1,11 @@
-package com.ecommerce.productservice.dto;
+package com.ecommerce.cartservice.utility;
 
-import lombok.Builder;
 import lombok.Getter;
-import lombok.Setter;
 
 import java.math.BigDecimal;
+
 @Getter
-@Setter
-@Builder
-public class ProductResponseDTO {
+public class Product {
     private Long id;
     private String name;
     private String description;
@@ -16,5 +13,4 @@ public class ProductResponseDTO {
     private int stockQuantity;
     private String sku;
     private Boolean active;
-    private String imageUrl;
-   }
+}

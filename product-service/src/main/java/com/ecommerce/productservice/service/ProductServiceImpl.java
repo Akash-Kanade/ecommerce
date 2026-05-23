@@ -46,12 +46,7 @@ public class ProductServiceImpl implements ProductService{
     @Transactional
     public ProductResponseDTO updateProduct(Long id, ProductRequestDTO dto) {
       Product product = repository.findById(id).orElseThrow(()-> new RuntimeException("Product does not exist"));
-      product.setActive(dto.getActive());
-      product.setStockQuantity(dto.getStockQuantity());
-      product.setDescription(dto.getDescription());
-      product.setPrice(dto.getPrice());
-      product.setName(dto.getName());
-      product.setSku(dto.getSku());
+      mapper.updateEntity(product, dto);
 
        log.info("Product with sku:{} is updated with id:{}",product.getSku(), product.getProductId());
        return mapper.toResponse(product);

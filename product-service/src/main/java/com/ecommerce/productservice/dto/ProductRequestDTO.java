@@ -15,4 +15,5 @@ public class ProductRequestDTO {
     private int stockQuantity;
     private String sku;
     private Boolean active;
+    private String imageUrl;
 }

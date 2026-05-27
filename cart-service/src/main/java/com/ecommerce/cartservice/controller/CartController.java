@@ -3,6 +3,7 @@ package com.ecommerce.cartservice.controller;
 import com.ecommerce.cartservice.dto.CartRequestDTO;
 import com.ecommerce.cartservice.dto.CartResponseDTO;
 import com.ecommerce.cartservice.dto.CartItemRequestDTO;
+import com.ecommerce.cartservice.exception.ProductException;
 import com.ecommerce.cartservice.service.CartService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
@@ -36,7 +37,7 @@ public class CartController {
     }
 
     @PostMapping
-    public ResponseEntity<CartResponseDTO> createCart(@Valid @RequestBody CartRequestDTO dto) {
+    public ResponseEntity<CartResponseDTO> createCart(@Valid @RequestBody CartRequestDTO dto) throws ProductException {
         var response = cartService.createCart(dto);
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(response);

@@ -1,0 +1,53 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.5)
+
+2026-05-21T10:54:54.168+05:30  INFO 14260 --- [product-service] [           main] c.e.p.ProductServiceApplication          : Starting ProductServiceApplication v0.0.1-SNAPSHOT using Java 21.0.11 with PID 14260 (C:\Users\akash\OneDrive\Desktop\ecommerce\product-service\target\product-service-0.0.1-SNAPSHOT.jar started by akash in C:\Users\akash\OneDrive\Desktop\ecommerce\product-service)
+2026-05-21T10:54:54.203+05:30  INFO 14260 --- [product-service] [           main] c.e.p.ProductServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-05-21T10:54:57.882+05:30  INFO 14260 --- [product-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-21T10:54:58.098+05:30  INFO 14260 --- [product-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 179 ms. Found 1 JPA repository interface.
+2026-05-21T10:55:00.808+05:30  INFO 14260 --- [product-service] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8081 (http)
+2026-05-21T10:55:00.897+05:30  INFO 14260 --- [product-service] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-21T10:55:00.921+05:30  INFO 14260 --- [product-service] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.20]
+2026-05-21T10:55:01.132+05:30  INFO 14260 --- [product-service] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 6513 ms
+2026-05-21T10:55:02.858+05:30  INFO 14260 --- [product-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-21T10:55:03.851+05:30  INFO 14260 --- [product-service] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@42cf6349
+2026-05-21T10:55:03.855+05:30  INFO 14260 --- [product-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-21T10:55:04.040+05:30  INFO 14260 --- [product-service] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/product_service?options=-c%20TimeZone=Asia/Kolkata (PostgreSQL 18.4)
+2026-05-21T10:55:04.544+05:30  INFO 14260 --- [product-service] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.198s)
+2026-05-21T10:55:04.655+05:30  INFO 14260 --- [product-service] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 2
+2026-05-21T10:55:04.682+05:30  INFO 14260 --- [product-service] [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-05-21T10:55:05.270+05:30  INFO 14260 --- [product-service] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-05-21T10:55:05.502+05:30  INFO 14260 --- [product-service] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.7.Final
+2026-05-21T10:55:06.851+05:30  INFO 14260 --- [product-service] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-21T10:55:07.143+05:30  INFO 14260 --- [product-service] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/product_service?options=-c%20TimeZone=Asia/Kolkata]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 18.4
+	Default catalog/schema: product_service/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-05-21T10:55:09.130+05:30  INFO 14260 --- [product-service] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-21T10:55:09.286+05:30  INFO 14260 --- [product-service] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-21T10:55:09.624+05:30  INFO 14260 --- [product-service] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-21T10:55:10.389+05:30  WARN 14260 --- [product-service] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-21T10:55:12.100+05:30  INFO 14260 --- [product-service] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8081 (http) with context path '/'
+2026-05-21T10:55:12.121+05:30  INFO 14260 --- [product-service] [           main] c.e.p.ProductServiceApplication          : Started ProductServiceApplication in 20.735 seconds (process running for 24.573)
+2026-05-21T10:55:12.459+05:30  INFO 14260 --- [product-service] [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-21T10:55:12.517+05:30  INFO 14260 --- [product-service] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-21T10:55:12.536+05:30  INFO 14260 --- [product-service] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+Hibernate: select p1_0.product_id,p1_0.active,p1_0.created_at,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.sku,p1_0.stock_quantity,p1_0.updated_at from product p1_0
+2026-05-21T10:55:13.246+05:30  INFO 14260 --- [product-service] [nio-8081-exec-1] c.e.p.service.ProductServiceImpl         : Fetching list of products
+Hibernate: select p1_0.product_id,p1_0.active,p1_0.created_at,p1_0.description,p1_0.image_url,p1_0.name,p1_0.price,p1_0.sku,p1_0.stock_quantity,p1_0.updated_at from product p1_0
+2026-05-21T10:55:15.227+05:30  INFO 14260 --- [product-service] [nio-8081-exec-2] c.e.p.service.ProductServiceImpl         : Fetching list of products

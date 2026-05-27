@@ -3,20 +3,13 @@ package com.ecommerce.userservice.controller;
 import com.ecommerce.userservice.dto.LoginDTO;
 import com.ecommerce.userservice.dto.RegisterUserDTO;
 import com.ecommerce.userservice.dto.UserResponseDTO;
-import com.ecommerce.userservice.entity.User;
 import com.ecommerce.userservice.exception.UserAlreadyExistException;
 import com.ecommerce.userservice.exception.WrongCredentialException;
 import com.ecommerce.userservice.service.AuthService;
 import com.ecommerce.userservice.service.UserService;
-import com.ecommerce.userservice.utility.JwtUtility;
 import jakarta.validation.Valid;
-import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -44,5 +37,13 @@ public class RegisterController {
         return ResponseEntity.status(HttpStatus.OK)
                         .body(token);
     }
+
+    @PostMapping("/logout")
+    public ResponseEntity<String> logout(@RequestHeader(value = "Authorization", required = false) String authorizationHeader) {
+        String email = authService.logout(authorizationHeader);
+        return ResponseEntity.status(HttpStatus.OK)
+                .body("Logged out user: " + email);
+    }
+
 }
 

@@ -1,0 +1,20 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: product-service
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+
+  datasource:
+    url: jdbc:postgresql://${DB_Host:localhost}:5432/product_service?options=-c%20TimeZone=Asia/Kolkata
+    username: postgres
+    password: postgres
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
